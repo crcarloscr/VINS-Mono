@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+ cmake_minimum_required(VERSION 2.8.3)
 project(camera_model)
 
 set(CMAKE_BUILD_TYPE "Release")
@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(Boost REQUIRED COMPONENTS filesystem program_options system)
 include_directories(${Boost_INCLUDE_DIRS})
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3 REQUIRED)
 
 # set(EIGEN_INCLUDE_DIR "/usr/local/include/eigen3")
 find_package(Ceres REQUIRED)
@@ -29,6 +29,7 @@ catkin_package(
 
 include_directories(
     ${catkin_INCLUDE_DIRS}
+    ${OpenCV_INCLUDE_DIRS}
     )
 
 include_directories("include")

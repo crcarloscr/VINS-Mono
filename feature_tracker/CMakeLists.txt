@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
     camera_model
     )
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3 REQUIRED)
 
 catkin_package()
 
@@ -26,6 +26,7 @@ find_package(Eigen3)
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 add_executable(feature_tracker
